@@ -16,12 +16,26 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Jest](https://jestjs.io/).
 
-## Running end-to-end tests
+This entire project has been setup according to this guide on [How to setup Angular unit testing with jest](https://www.amadousall.com/how-to-set-up-angular-unit-testing-with-jest/)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The [@briebug schematics](https://github.com/briebug/jest-schematic) were used, which simplifies the installation greatly!
 
+No Testbed is used for testing in this project, instead the simpler Jest mocking is used for all tests!
+
+In order to use Jest --watch mode simply run
+`npm run test:watch`
+When running in watch-mode the following commands can be issued
+```
+Watch Usage
+ › Press f to run only failed tests.
+ › Press o to only run tests related to changed files.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.
+```
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
