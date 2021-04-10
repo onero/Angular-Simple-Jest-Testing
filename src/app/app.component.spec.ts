@@ -11,24 +11,32 @@ describe('AppComponent', () => {
     }
 
     fixture = new AppComponent(myTestServiceMock)
-  })
+  });
 
-  describe('Setup component', () => {
-    describe('ngOnInit', () => {
+  describe('Setup fixture', () => {
 
-      it('should call doStuff', () => {
-        // Arrange
-        const doComponentStuffSpy = jest.spyOn(fixture, 'doComponentStuff');
-        const doServiceStuffSpy = jest.spyOn(myTestServiceMock, 'doServiceStuff');
+    it('should setup fixture', () => {
+      // Assert
+      expect(fixture).toBeTruthy();
+    });
 
-        // Act
-        fixture.ngOnInit();
+  });
 
-        // Assert
-        expect(doComponentStuffSpy).toHaveBeenCalledTimes(1);
-        expect(doServiceStuffSpy).toHaveBeenCalledTimes(1);
-      })
+  describe('ngOnInit', () => {
 
+    it('should call doStuff', () => {
+      // Arrange
+      const doComponentStuffSpy = jest.spyOn(fixture, 'doComponentStuff');
+      const doServiceStuffSpy = jest.spyOn(myTestServiceMock, 'doServiceStuff');
+
+      // Act
+      fixture.ngOnInit();
+
+      // Assert
+      expect(doComponentStuffSpy).toHaveBeenCalledTimes(1);
+      expect(doServiceStuffSpy).toHaveBeenCalledTimes(1);
     })
-  })
-})
+
+  });
+
+  });
