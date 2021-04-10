@@ -6,6 +6,8 @@ describe('AppComponent', () => {
   let myTestServiceMock: MyTestService;
 
   beforeEach(() => {
+
+    // Setting up stubbed methods from injected service
     myTestServiceMock = {
       doServiceStuff: jest.fn()
     };
