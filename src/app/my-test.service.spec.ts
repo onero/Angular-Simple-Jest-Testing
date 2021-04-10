@@ -3,14 +3,13 @@ import { TestBed } from '@angular/core/testing';
 import { MyTestService } from './my-test.service';
 
 describe('MyTestService', () => {
-  let service: MyTestService;
+  let fixture: MyTestService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(MyTestService);
+    fixture = new MyTestService();
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(fixture).toBeTruthy();
   });
 });
