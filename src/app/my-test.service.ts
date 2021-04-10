@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MyTestService {
-  doServiceStuff() {
+  doServiceStuff(): void {
     // Left empty on purpose
   }
 

@@ -9,14 +9,14 @@ import { MyTestService } from './my-test.service';
 export class AppComponent implements OnInit {
   title = 'simple-jest-testing';
 
-   constructor(private myTestServiceMock: MyTestService) {}
+  constructor(private myTestServiceMock: MyTestService) { }
 
-   ngOnInit() {
+  ngOnInit(): void {
     this.doComponentStuff();
-    this.myTestServiceMock.doServiceStuff()
+    this.myTestServiceMock.doServiceStuff();
   }
 
-  doComponentStuff() {
+  doComponentStuff(): void {
     // Left empty on purpose
   }
 }

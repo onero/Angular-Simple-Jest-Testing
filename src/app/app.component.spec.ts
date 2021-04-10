@@ -8,9 +8,9 @@ describe('AppComponent', () => {
   beforeEach(() => {
     myTestServiceMock = {
       doServiceStuff: jest.fn()
-    }
+    };
 
-    fixture = new AppComponent(myTestServiceMock)
+    fixture = new AppComponent(myTestServiceMock);
   });
 
   describe('Setup fixture', () => {
@@ -35,8 +35,8 @@ describe('AppComponent', () => {
       // Assert
       expect(doComponentStuffSpy).toHaveBeenCalledTimes(1);
       expect(doServiceStuffSpy).toHaveBeenCalledTimes(1);
-    })
+    });
 
   });
 
-  });
+});
