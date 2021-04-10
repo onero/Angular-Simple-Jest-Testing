@@ -1,35 +1,34 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MyTestService } from './my-test.service';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+  let fixture: AppComponent;
+  let myTestServiceMock: MyTestService;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  beforeEach(() => {
+    myTestServiceMock = {
+      doServiceStuff: jest.fn()
+    }
 
-  it(`should have as title 'simple-jest-testing'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('simple-jest-testing');
-  });
+    fixture = new AppComponent(myTestServiceMock)
+  })
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('simple-jest-testing app is running!');
-  });
-});
+  describe('Setup component', () => {
+    describe('ngOnInit', () => {
+
+      it('should call doStuff', () => {
+        // Arrange
+        const doComponentStuffSpy = jest.spyOn(fixture, 'doComponentStuff');
+        const doServiceStuffSpy = jest.spyOn(myTestServiceMock, 'doServiceStuff');
+
+        // Act
+        fixture.ngOnInit();
+
+        // Assert
+        expect(doComponentStuffSpy).toHaveBeenCalledTimes(1);
+        expect(doServiceStuffSpy).toHaveBeenCalledTimes(1);
+      })
+
+    })
+  })
+})
